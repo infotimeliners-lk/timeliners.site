@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launching Something Serious | TimeLiners</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #000;
+            overflow: hidden;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            padding: 80px 40px;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 8vw, 3.5rem);
+            font-weight: 800;
+            color: #f68002;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* Interactive Button Area */
+        .contact-area {
+            position: relative;
+            display: inline-block;
+            min-height: 60px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #000;
+            color: #fff;
+            padding: 18px 45px;
+            border-radius: 100px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #f68002;
+            transform: scale(1.05);
+        }
+
+        /* The hidden email display */
+        .email-display {
+            display: none;
+            background: #f4f4f4;
+            padding: 15px 30px;
+            border-radius: 100px;
+            font-weight: 700;
+            color: #000;
+            border: 2px solid #f68002;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .email-display a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .copy-hint {
+            display: block;
+            font-size: 0.7rem;
+            color: #f68002;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #bbb;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <h1>Launching Something Serious.</h1>
+        <p>We are currently working on the website. Something extraordinary is in the works for TimeLiners.</p>
+        
+        <div class="contact-area">
+            <button id="mainBtn" class="btn" onclick="revealEmail()">Get In Touch</button>
+            
+            <div id="emailBox" class="email-display">
+                <a href="mailto:info.timeliners@gmail.com">info.timeliners@gmail.com</a>
+                <span class="copy-hint">Tap to Send Email</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 TimeLiners
+    </footer>
+
+    <script>
+        function revealEmail() {
+            const btn = document.getElementById('mainBtn');
+            const box = document.getElementById('emailBox');
+            
+            // Hide button and show email box
+            btn.style.display = 'none';
+            box.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
