@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TimeLiners</title>
+    <title>TimeLiners | Creative Video Agency</title>
     
     <link rel="icon" type="image/png" href="logo.png">
     
@@ -41,19 +41,22 @@
             box-shadow: 0 15px 30px rgba(246, 128, 2, 0.2);
         }
 
-        .video-card {
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            background: black;
+        /* YouTube Container Fix */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; 
+            height: 0;
             border-radius: 2.5rem;
             overflow: hidden;
+            background: #000;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            aspect-ratio: 16/9;
         }
-        
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
         }
 
         .plan-card {
@@ -133,28 +136,36 @@
         
         <div class="grid md:grid-cols-2 gap-x-10 gap-y-16">
             <div>
-                <div class="video-card"><video controls><source src="video 1.mp4" type="video/mp4"></video></div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/QKjC2JdjZoc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <div class="mt-6">
                     <span class="text-[#f68002] text-[10px] font-black uppercase tracking-widest">• Commercial</span>
-                    <h3 class="text-2xl font-bold mt-1">Global Express Promo Video</h3>
+                    <h3 class="text-2xl font-bold mt-1">Global Express Commercial</h3>
                 </div>
             </div>
             <div>
-                <div class="video-card"><video controls><source src="video 2.mp4" type="video/mp4"></video></div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/J9OUWb8o_f4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <div class="mt-6">
-                    <span class="text-[#f68002] text-[10px] font-black uppercase tracking-widest">• Commercial</span>
-                    <h3 class="text-2xl font-bold mt-1">FutureLink AI Course Promo</h3>
+                    <span class="text-[#f68002] text-[10px] font-black uppercase tracking-widest">• Promo</span>
+                    <h3 class="text-2xl font-bold mt-1">FutureLink AI Course</h3>
                 </div>
             </div>
             <div>
-                <div class="video-card"><video controls><source src="video 3.mp4" type="video/mp4"></video></div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/n53S4yEg0Zc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <div class="mt-6">
                     <span class="text-[#f68002] text-[10px] font-black uppercase tracking-widest">• Animation</span>
                     <h3 class="text-2xl font-bold mt-1">JBL Animated Ad</h3>
                 </div>
             </div>
             <div>
-                <div class="video-card"><video controls><source src="video 4.mp4" type="video/mp4"></video></div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/oMm82mzyiOo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 <div class="mt-6">
                     <span class="text-[#f68002] text-[10px] font-black uppercase tracking-widest">• Animation</span>
                     <h3 class="text-2xl font-bold mt-1">Liquid Death Animated Ad</h3>
@@ -166,7 +177,6 @@
     <section id="services" class="max-w-5xl mx-auto px-8 py-24">
         <div class="text-center mb-16">
             <h2 class="section-title text-4xl mb-4">How We Work</h2>
-            <p class="text-gray-400 font-medium max-w-lg mx-auto text-sm">Tailored solutions for modern brands. Whether you have a script or just a vision, we bring it to life.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-8">
             <div class="plan-card p-10 rounded-[2.5rem] flex flex-col">
@@ -174,7 +184,7 @@
                     <svg width="24" height="24" stroke="#f68002" fill="none" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Edit Only Plan</h3>
-                <p class="text-gray-400 text-[13px] mb-8 font-medium">Perfect for brands with existing creative direction needing high end post production.</p>
+                <p class="text-gray-400 text-[13px] mb-8 font-medium">Professional post-production for brands with existing footage.</p>
                 <ul class="space-y-4 mb-10 text-[13px] font-bold text-gray-700">
                     <li><span class="text-[#f68002] mr-3">✓</span> Professional Video Editing</li>
                     <li><span class="text-[#f68002] mr-3">✓</span> Sound Design and Mixing</li>
@@ -187,7 +197,7 @@
                     <svg width="24" height="24" stroke="#f68002" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Script and Edit Plan</h3>
-                <p class="text-gray-400 text-[13px] mb-8 font-medium">The full package. We handle the strategy, narrative, and execution from zero to viral.</p>
+                <p class="text-gray-400 text-[13px] mb-8 font-medium">Full concept-to-delivery service including strategy and execution.</p>
                 <ul class="space-y-4 mb-10 text-[13px] font-bold text-gray-700">
                     <li><span class="text-[#f68002] mr-3">✓</span> Strategic Storyboarding</li>
                     <li><span class="text-[#f68002] mr-3">✓</span> Full Post Production</li>
