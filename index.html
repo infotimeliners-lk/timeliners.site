@@ -11,13 +11,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root { --brand: #f68002; }
+
+        /* 1. CUSTOM TEXT SELECTION */
+        ::selection {
+            background-color: var(--brand);
+            color: white;
+        }
+        ::-moz-selection {
+            background-color: var(--brand);
+            color: white;
+        }
+        
         body { 
             font-family: 'Poppins', sans-serif; 
             background-color: #fafafa;
             color: #111;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         
+        /* 2. SCROLL REVEAL ANIMATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .header-glass {
             position: sticky;
             top: 0;
@@ -41,7 +66,6 @@
             box-shadow: 0 15px 30px rgba(246, 128, 2, 0.2);
         }
 
-        /* YouTube Container Fix */
         .video-container {
             position: relative;
             width: 100%;
@@ -107,7 +131,7 @@
         </nav>
     </header>
 
-    <section class="h-[85vh] flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto">
+    <section class="h-[85vh] flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto reveal active">
         <div class="inline-flex items-center gap-2 border border-orange-100 rounded-full px-5 py-2 text-[10px] uppercase tracking-widest font-black text-[#f68002] bg-white shadow-sm mb-10">
             <span class="w-2 h-2 rounded-full bg-[#f68002] blink-dot"></span>
             Creative Video Agency
@@ -128,14 +152,14 @@
         </div>
     </section>
 
-    <section id="portfolio" class="max-w-6xl mx-auto px-8 py-20">
+    <section id="portfolio" class="max-w-6xl mx-auto px-8 py-20 reveal">
         <div class="text-center mb-16">
             <h2 class="section-title text-4xl mb-3">Our Work</h2>
             <p class="text-gray-400 font-medium max-w-xl mx-auto text-sm">A Curated Selection of Our Work We Showcase Internal Sample Commercials to Protect Client Privacy</p>
         </div>
         
         <div class="grid md:grid-cols-2 gap-x-10 gap-y-16">
-            <div>
+            <div class="reveal">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/QKjC2JdjZoc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -144,7 +168,7 @@
                     <h3 class="text-2xl font-bold mt-1">Global Express Commercial</h3>
                 </div>
             </div>
-            <div>
+            <div class="reveal">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/J9OUWb8o_f4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -153,7 +177,7 @@
                     <h3 class="text-2xl font-bold mt-1">FutureLink AI Course</h3>
                 </div>
             </div>
-            <div>
+            <div class="reveal">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/n53S4yEg0Zc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -162,7 +186,7 @@
                     <h3 class="text-2xl font-bold mt-1">JBL Animated Ad</h3>
                 </div>
             </div>
-            <div>
+            <div class="reveal">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/oMm82mzyiOo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -174,9 +198,10 @@
         </div>
     </section>
 
-    <section id="services" class="max-w-5xl mx-auto px-8 py-24">
+    <section id="services" class="max-w-5xl mx-auto px-8 py-24 reveal">
         <div class="text-center mb-16">
-            <h2 class="section-title text-4xl mb-4">How We Work</h2>
+            <h2 class="section-title text-4xl mb-3">How We Work</h2>
+            <p class="text-gray-400 font-medium max-w-xl mx-auto text-sm">Tailored solutions for modern brands. Whether you have a script or just a vision, we bring it to life.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-8">
             <div class="plan-card p-10 rounded-[2.5rem] flex flex-col">
@@ -208,16 +233,13 @@
         </div>
     </section>
 
-    <section id="contact" class="max-w-4xl mx-auto px-8 pb-32">
+    <section id="contact" class="max-w-4xl mx-auto px-8 pb-32 reveal">
         <div class="cta-box rounded-[2.5rem] p-10 md:p-16 text-white text-center shadow-2xl">
             <h2 class="section-title text-4xl md:text-5xl mb-6 w-full text-center">Let's Build Your <br> Next Commercial.</h2>
             <p class="text-white/90 font-medium mb-10 text-sm max-w-md mx-auto text-center">Ready to scale your brand with video? Get in touch today for a free creative consultation.</p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
                 <a href="mailto:info.timeliners@gmail.com" class="bg-white text-[#f68002] px-8 py-4 rounded-full font-bold text-sm btn-smooth w-full sm:w-auto">✉ Email Us</a>
                 <a href="https://wa.me/94771873449" target="_blank" class="bg-[#0f172a] text-white px-8 py-4 rounded-full font-bold text-sm btn-smooth w-full sm:w-auto">💬 WhatsApp</a>
-            </div>
-            <div class="mt-10 text-[11px] font-bold tracking-[0.2em] opacity-80 lowercase text-center">
-                info.timeliners@gmail.com | +94 77 187 3449
             </div>
         </div>
     </section>
@@ -256,7 +278,22 @@
         </div>
     </footer>
 
+    <script>
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
 </body>
 </html>
-
-
