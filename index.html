@@ -117,11 +117,14 @@
 <body class="antialiased">
 
     <header class="header-glass">
-        <nav class="flex items-center justify-between px-8 py-6 max-w-6xl mx-auto">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="TimeLiners Logo" class="h-10 w-auto">
-                <span class="text-2xl font-extrabold tracking-tighter">TimeLiners</span>
-            </div>
+        <nav class="flex items-center justify-between px-6 md:px-8 py-5 max-w-6xl mx-auto">
+            <a href="#hero" class="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity">
+                <img src="logo.png" alt="TimeLiners Logo" class="h-8 md:h-10 w-auto">
+                <span class="text-xl md:text-2xl font-extrabold tracking-tighter">TimeLiners</span>
+            </a>
+            
+            <a href="#contact" class="md:hidden bg-[#0f172a] text-white px-5 py-2.5 rounded-full text-[12px] font-bold">Start a Project</a>
+
             <div class="hidden md:flex items-center gap-10 text-[15px] font-bold">
                 <a href="#portfolio" class="hover:text-[#f68002] transition">Portfolio</a>
                 <a href="#services" class="hover:text-[#f68002] transition">Services</a>
@@ -131,7 +134,7 @@
         </nav>
     </header>
 
-    <section class="h-[85vh] flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto reveal active">
+    <section id="hero" class="min-h-[85vh] flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto reveal active py-12">
         <div class="inline-flex items-center gap-2 border border-orange-100 rounded-full px-5 py-2 text-[10px] uppercase tracking-widest font-black text-[#f68002] bg-white shadow-sm mb-10">
             <span class="w-2 h-2 rounded-full bg-[#f68002] blink-dot"></span>
             Creative Video Agency
@@ -297,5 +300,3 @@
 
 </body>
 </html>
-
-
